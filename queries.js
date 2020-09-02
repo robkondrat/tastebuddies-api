@@ -65,10 +65,99 @@ const deleteUser = (request, response) => {
   })
 }
 
+const getCuisines = (request, response) => {
+  pool.query('SELECT * FROM cuisines ORDER BY id ASC', (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
+const getCuisineById = (request, response) => {
+  const id = parseInt(request.params.id)
+
+  pool.query('SELECT * FROM cuisines WHERE id = $1', [id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
+const getRestaurants = (request, response) => {
+  pool.query('SELECT * FROM restaurants ORDER BY id ASC', (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
+const getRestaurantById = (request, response) => {
+  const id = parseInt(request.params.id)
+
+  pool.query('SELECT * FROM restaurants WHERE id = $1', [id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
+const createRestaurant = (request, response) => {
+  const { name, address, phone_number, website, image_url, cuisine_id } = request.body
+
+  pool.query('INSERT INTO restaurants (name, email) VALUES ($1, $2)', [name, address, phone_number, website, image_url, cuisine_id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(201).send(`User added with ID: ${result.insertId}`)
+  })
+}
+
+const updateRestaurant = (request, response) => {
+  const id = parseInt(request.params.id)
+  const { name, address, phone_number, website, image_url, cuisine_id } = request.body
+
+  pool.query(
+    'UPDATE restaurants SET name = $1, email = $2 WHERE id = $3',
+    [name, address, phone_number, website, image_url, cuisine_id, id],
+    (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).send(`User modified with ID: ${id}`)
+    }
+  )
+}
+
+const deleteRestaurant = (request, response) => {
+  const id = parseInt(request.params.id)
+
+  pool.query('DELETE FROM restaurants WHERE id = $1', [id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).send(`Restaurant deleted with ID: ${id}`)
+  })
+}
+
+
+
+
+
 module.exports = {
   getUsers,
   getUserById,
   createUser,
   updateUser,
   deleteUser,
+  getCuisines,
+  getCuisineById,
+  getRestaurant,
+  getRestaurantById,
+  createRestaurant,
+  updateRestaurant,
+  deleteRestaurant
 }

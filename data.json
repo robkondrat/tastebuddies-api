@@ -1,0 +1,431 @@
+[
+  {
+    type: "American",
+    restaurants: [
+      {
+        name: "The Spoke & Bird",
+        address: "205 E 18th St.",
+        phone_number: "929-263-2473",
+        website: "https://www.spokeandbird.com/",
+        image_url: "https://media.timeout.com/images/102424857/630/472/image.jpg",
+        cuisine_id: 1,
+        menu_items: [
+          {
+            name: "Hamburger",
+            description: "A 6 ounce grassfed beef burger, lettuce, shaved onion, house pickles and mayo on a homemade brioche bun. Choice of side.",
+            image_url: "https://i.insider.com/5e503f40a9f40c39713c9540?width=750&format=jpeg&auto=webp",
+            restaurant_id: 1
+          }, 
+          {
+            name: "Smoked Hot Dog",
+            description: "Catalpa Grove all pork hot dog - made just for us! Topped with house pickles, chives, house mayo, homemade bun. Choice of side.",
+            image_url: "https://www.nueskes.com/assets/1/6/DimLarge/443_444_Big_Dogs_Wieners_Jan2019.jpg?2302",
+            restaurant_id: 1
+          },
+          {
+            name: "The Best Damn BLT!!",
+            description: "Thick sliced Bacon, local greens, MightyVine tomato and mayo on housemade texas toast. Choice of side.",
+            image_url: "https://img.sndimg.com/food/image/upload/q_92,fl_progressive/v1/img/recipes/12/96/15/RCNa1fLaTS2U0FY3yOUq_BLT%205%20-%20final_6.jpg",
+            restaurant_id: 1
+          },
+          {
+            name: "Mushroom Melt Sandiwch",
+            description: "Sauteed mushrooms, baby swiss, house giardiniera on homemade caraway rye bread. Choice of side.",
+            image_url: "https://www.closetcooking.com/wp-content/uploads/2011/12/MushroomGrilledCheeseSandwich28akaTheMushroomMelt295004434.jpg",
+            restaurant_id: 1
+          },
+          {
+            name: "Smoked Turkey Salad Sandwich",
+            description: "Smoke turkey breast, cheddar, mayo and house pickles on homemeade sourdough. Choice of side.",
+            image_url: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2016/12/8/0/FN_iconic-arkansas-food-burges-smoked-turkey-salad-sandwich_s4x3.jpg.rend.hgtvcom.616.462.suffix/1481216484046.jpeg",
+            restaurant_id: 1
+          },
+          {
+            name: "White Bean & Beets Sandwich (VEGAN)",
+            description: "Local white bean puree, seasonal pickle, house veg slaw, herb oil, homemade multigrain.",
+            image_url: "https://i.pinimg.com/236x/ff/04/f1/ff04f1461afe64c9c01e0c9bf12d2df5--sandwich-vegan-beetroot-sandwich.jpg",
+            restaurant_id: 1
+          }
+        ]
+      },
+      {
+        name: "Kuma's Corner",
+        address: "852 W Fulton Market",
+        phone_number: "312-666-9090",
+        website: "https://kumascorner.com/",
+        image_url: "https://www.google.com/search?q=kuma%27s+corner&safe=off&rlz=1C5CHFA_enUS876US876&sxsrf=ALeKk035wCLxFpmA17g7QYe1wvw-1s5O-w:1598978614584&source=lnms&tbm=isch&sa=X&ved=2ahUKEwighs3Cs8jrAhWBBs0KHcEkD1IQ_AUoA3oECA4QBQ&biw=828&bih=789#imgrc=b_DuK1mS7gw3RM",
+        cuisine_id: 1,
+        menu items: [
+          {
+            name: "Mac and Cheese",
+            description: "16 oz. of elbow macaroni mixed with our special cheese blend and topped with breadcrumbs and scallions.",
+            image_url: "https://kumascorner.com/app/uploads/2016/11/Screen-Shot-2017-10-31-at-10.38.01-AM.png",
+            restaurant_id: 2
+          },
+          {
+            name: "Kuma Burger",
+            description: "Bacon, sharp cheddar, fried egg, lettuce, tomato and onion.",
+            image_url: "https://kumascorner.com/app/uploads/2016/11/FN_chicago-restaurants-Kumas-Corner-Kumas-Burger_s4x3.jpg.rend_.hgtvcom.966.725-e1488565906793.jpeg",
+            restaurant_id: 2
+          },
+          {
+            name: "Mastodon Burger",
+            description: "Served with bacon, barbecue sauce, sharp cheddar, and frizzled onion.",
+            image_url: "https://i.pinimg.com/originals/34/98/8c/34988c657a60693177b1a9f9232e990f.jpg",
+            restaurant_id: 2
+          },
+          {
+            name: "Slayer Burger",
+            description: "Burger on a bed of fries, chili, cherry peppers, caramelized onion, andouille sausage, shredded Monterey Jack, green onion and anger.",
+            image_url: "https://kumascorner.com/app/uploads/2016/11/Slayer-Burger.png",
+            restaurant_id: 2
+          },
+          {
+            name: "Neurosis Burger",
+            description: "Includes horseradish mayo, sharp cheddar, Swiss, caramelized onion, sauteed mushroom, lettuce, tomato and onion.",
+            image_url: "https://nausetfarms.com/wp-content/uploads/2016/04/Neurosis-Burger-Double-Cheese.jpg",
+            restaurant_id: 2
+          },
+          {
+            name: "Converge Burger",
+            description: "4oz. Impossible burger patty, cherry tomato jam, avocado mash, vegan cheddar, roasted garlic vegan mayo, baby arugula, red onion, vegan pretzel bun.",
+            image_url: "https://kumascorner.com/app/uploads/2017/10/ConvergeFinal.jpg",
+            restaurant_id: 2
+          }
+        ]
+      },
+      {
+        name: "Bub City",
+        address: "435 N Clark St.",
+        phone_number: "312-584-3488",
+        website: "https://www.bub-city.com/chicago/",
+        image_url: "https://s3.amazonaws.com/bucket.bub-city.com/wp-content/uploads/BubCityInteriors130116-2.jpg",
+        cuisine_id: 1,
+        menu_items: [
+          {
+            name: "BBQ Brisket Nachos",
+            description: "Giddy-Up Fries",
+            image_url: "https://media-cdn.tripadvisor.com/media/photo-s/0c/95/c1/64/giddy-up-fries.jpg",
+            restaurant_id: 3
+          },
+          {
+            name: "Homemade Pastrami",
+            description: "Cured for 10 days, smoked and sliced to order with deli rye & potato latkes, quantities limited!",
+            image_url: "https://s3.amazonaws.com/bucket.leye.co/uploads/2020/03/2020_02_03_BubCityPastrami-25-1-1.jpg",
+            restaurant_id: 3
+          },
+          {
+            name: "Double-Barrel Burger",
+            description: "2 all-beef patties griddled to perfection with american cheese mustard, pickle & onion. Served with waffles.",
+            image_url: "https://pbs.twimg.com/media/COaNTYYUkAAEuqV.jpg",
+            restaurant_id: 3
+          },
+          {
+            name: "Fried Chicken Sandwich",
+            description: "Original, buffalo, or nashville hot. Served with waffle fries.",
+            image_url: "https://easychickenrecipes.com/wp-content/uploads/2019/06/fried-chicken-sandwich-4-of-7.jpg",
+            restaurant_id: 3
+          },
+          {
+            name: "Pulled Pork Sandwich",
+            description: "Hickory-smoked pork, served with waffle fries.",
+            image_url: "https://keviniscooking.com/wp-content/uploads/2019/05/Classic-Pulled-Pork-Sandwich-square.jpg",
+            restaurant_id: 3
+          },
+          {
+            name: "Cali Burger",
+            description: "2 Burger Patties, american cheese, slice of tomato, shredded lettuce, sliced raw onion, pickles, and our house-made Cali sauce (ketchup, mayo, sweet relish, vinegar).",
+            image_url: "https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/slideshow-images/slides/carl.jpg?itok=HzRmWLRo",
+            restaurant_id: 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    type: "Thai",
+    restaurants: [
+      {
+        name: "Opart Thai House",
+        address: "1371 W Chicago Ave",
+        phone_number: "312-584-3457",
+        website: "https://www.opartthai.com/ssl/index.php",
+        image_url: "https://cdn.vox-cdn.com/thumbor/Ku50dzCpBjveXJyqGAvE8Rgrdc4=/0x0:2048x1536/1200x800/filters:focal(0x0:2048x1536)/cdn.vox-cdn.com/uploads/chorus_image/image/48425757/12414175_10153206203091316_131782019_o.0.0.jpg",
+        cuisine_id: 2,
+        menu items: [
+          {
+            name: "Gaeng Panang Curry",
+            description: "Panang curry and Thai basil leaves sauteed in coconut milk with your choice of protein. Gluten-free. Spicy.",
+            image_url: "https://cdn.shopify.com/s/files/1/0076/4339/8233/files/thai-panang-curry-recipe-744x547-min.png?v=1542712351",
+            restaurant_id: 4
+          },
+          {
+            name: "Gaeng Masaman Curry",
+            description: "Masaman curry and potatoes sauteed in coconut milk with peanuts and chicken. Gluten-free. Spicy.",
+            image_url: "https://www.connoisseurusveg.com/wp-content/uploads/2013/10/vegan-massaman-curry-fb.jpg",
+            restaurant_id: 4
+          }, 
+          {
+            name: "Pad Thai",
+            description: "Fresh thin rice noodles perfectly stir-fried with fried tofu, bean sprouts, eggs, green onion and ground peanuts in homemade tamarind sauce. Gluten-free.",
+            image_url: "https://tastesbetterfromscratch.com/wp-content/uploads/2018/07/Pad-Thai-8.jpg",
+            restaurant_id: 4
+          }, 
+          {
+            name: "Woon Sen Pad Thai",
+            description: "Stir-fried bean thread noodles with fried tofu, bean sprouts, eggs, green onion and ground peanuts. Gluten-free",
+            image_url: "https://www.awanderingfoodie.com/wp-content/uploads/2020/05/Pad-Woon-Sen.jpg",
+            restaurant_id: 4
+          },
+          {
+            name: "Pad Lard Nar",
+            description: "Stir-fried fresh flat rice noodles with Chinese broccoli topped with gravy and choice of protein.",
+            image_url: "https://i.ytimg.com/vi/BoBqOO2y7HA/maxresdefault.jpg",
+            restaurant_id: 4
+          },
+          {
+            name: "Khao Soy",
+            description: "Boiled egg noodles with fresh sliced chicken in savory coconut curry soup and garnished with crispy egg noodles, sliced onions and fresh lime.",
+            image_url: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.myrecipes.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fmrtrending_khaosoi.jpg%3Fitok%3DfmUuS2fl",
+            restaurant_id: 4
+          }
+        ]
+      },
+      {
+        name: "SaiMai Thai",
+        address: "338 W Armitage Ave.",
+        phone_number: "773-348-3888",
+        website: "https://www.saimaithai.com/",
+        image_url: "https://media-cdn.tripadvisor.com/media/photo-s/05/f3/4f/74/saimai-thai.jpg",
+        cuisine_id: 2,
+        menu_items: [
+          {
+            name: "Panang Curry",
+            description: "Coconut milk, bell peppers, and lime leaves. Popular.",
+            image_url: "https://tastesbetterfromscratch.com/wp-content/uploads/2019/12/Panang-Curry-8.jpg",
+            restaurant_id: 5
+          },
+          {
+            name: "Red Curry",
+            description: "Coconut milk, bamboo shots, bell peppers, basil leaves, and eggplant. Spicy.",
+            image_url: "https://carlsbadcravings.com/wp-content/uploads/2017/02/Thai-Red-Curry-Chicken-5.jpg",
+            restaurant_id: 5
+          }, 
+          {
+            name: "Green Curry",
+            description: "Coconut milk, bamboo shots, bell peppers, basil leaves, and eggplant. Spicy.",
+            image_url: "https://www.recipetineats.com/wp-content/uploads/2019/02/Thai-Green-Curry_5.jpg",
+            restaurant_id: 5
+          }, 
+          {
+            name: "Massaman Curry",
+            description: "Coconut milk, potatoes, peanuts, and white onions.",
+            image_url: "https://inquiringchef.com/wp-content/uploads/2020/02/Thai-Massaman-Curry_1.jpg",
+            restaurant_id: 5
+          }, 
+          { 
+            name: "Avocado Curry",
+            description: "Green curry with fresh avocado diced and basil leaves.",
+            image_url: "https://res.cloudinary.com/sjlabs/image/upload/c_scale,q_auto,f_auto,w_1024,c_fill/l_overlay-2-star-v7,g_south_east,fl_relative,x_0.03,y_0.03,h_0.28/74126803904.jpg",
+            restaurant_id: 5
+          }, 
+          {
+            name: "Mango Curry",
+            description: "Red curry with fresh mango and basil leaves.",
+            image_url: "https://www.simplyrecipes.com/wp-content/uploads/2008/05/mango-chicken-curry-horiz-a-1800.jpg",
+            restaurant_id: 5
+          }
+        ]
+      },
+      {
+        name: "Silver Spoon",
+        address: "710 N Rush St.",
+        phone_number: "312-584-3512",
+        website: "https://www.silverspoonchicago.com/",
+        image_url: "https://media-cdn.tripadvisor.com/media/photo-s/0e/37/19/7e/silver-spoon-is-easy.jpg",
+        cuisine_id: 2,
+        menu_items: [
+          {
+            name: "Pad See Eiw",
+            description: "Stir-fried wide noodles with chicken or beef with egg, Chinese broccoli, and bean sprout.",
+            image_url: "https://thewoksoflife.com/wp-content/uploads/2017/02/pad-see-ew-11-1-500x375.jpg",
+            restaurant_id: 6
+          }, 
+          {
+            name: "Pad Woonsen",
+            description: "Stir-fried glass noodles with chicken, shrimp, egg, baby corns, mushrooms, peapods, bean sprouts, and carrots.",
+            image_url: "https://hot-thai-kitchen.com/wp-content/uploads/2020/04/PAd-woon-sen-lockdown-sm.jpg",
+            restaurant_id: 6
+          }, 
+          {
+            name: "Bamee BBQ Pork",
+            description: "Steamed egg noodles topped with sliced BBQ pork, garlic, green onion and bean sprout.",
+            image_url: "https://highheelgourmet.files.wordpress.com/2015/07/egg-noodles-with-wontons-and-red-thai-barbecue-pork-ba-mee-kiew-moo-dang-by-the-high-heel-gourmet-4.jpg",
+            restaurant_id: 6
+          }, 
+          {
+            name: "Curry Crispy Noodle",
+            description: "Crispy wide rice noodle and chicken topped with Tahi pananag curry.",
+            image_url: "https://www.seriouseats.com/recipes/images/2014/09/20140707-small-house-thai-cooking-school-khao-soi-10.jpg",
+            restaurant_id: 6
+          }, 
+          {
+            name: "Udon Pad Thai",
+            description: "Japanese noodle, stir-fried with egg, bean sprout and onions topped with carrots, green onions and ground peanuts.",
+            image_url: "https://res.cloudinary.com/hz3gmuqw6/image/upload/c_fill,h_539,q_60,w_718/v1/goldenapron/5e595c1847d38.jpg",
+            restaurant_id: 6
+          },
+          {
+            name: "Koew Teaw Tom Yum",
+            description: "Thin rice noodle and chicken in a spicy tom yum soup.",
+            image_url: "https://media-cdn.tripadvisor.com/media/photo-s/07/ba/0f/84/khao-soi-khun-yai.jpg",
+            restaurant_id: 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    type: "Chinese",
+    restaurants: [
+      {
+        name: "Northern City",
+        address: "742 W 31st St.",
+        phone_number: "312-584-3143",
+        website: "http://www.northerncity.com/",
+        image_url: "https://media1.fdncms.com/chicago/imager/northern-city/u/original/7991637/northerncity.jpg",
+        cuisine_id: 3,
+        menu_items: [
+          {
+            name: "Shredded Pork Beijing Style",
+            description: "Served with soup, egg roll and white rice.",
+            image_url: "https://redcornerutah.com/wp-content/uploads/2019/04/img_5992.jpg",
+            restaurant_id: 7
+          }, 
+          {
+            name: "Moo Shu Pork",
+            description: "Served with soup, egg roll and white rice.",
+            image_url: "https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Moo-Shu-Pork-Stir-Fry_EXPS_FT19_133911_F_0612_1.jpg",
+            restaurant_id: 7
+          }, 
+          {
+            name: "Stir-fried Tofu with Pork in Brown Sauce",
+            description: "Served with soup, egg roll and white rice.",
+            image_url: "https://casaveneracion.com/wp-content/uploads/2012/09/pork-pechay-tofu.jpg",
+            restaurant_id: 7
+          }, 
+          {
+            name: "Beef with Bitter Melon",
+            description: "Served with soup, egg roll, and white rice.",
+            image_url: "https://images.media-allrecipes.com/userphotos/5036079.jpg",
+            restaurant_id: 7
+          }, 
+          {
+            name: "Stir-fried Chicken with Brown Sauce",
+            description: "Served with soup, egg roll, and white rice.",
+            image_url: "https://thewoksoflife.com/wp-content/uploads/2019/05/chicken-with-broccoli-10.jpg",
+            restaurant_id: 7
+          },
+          {
+            name: "Mapo Tofu",
+            description: "Served with soup, egg roll and white rice.",
+            image_url: "https://cookingwithdog.com/wp-content/uploads/2017/04/mapo-tofu-00.jpg",
+            restaurant_id: 7
+          }
+        ]
+      },
+      {
+        name: "MCCB Chicago",
+        address: "2138 S Archer Ave",
+        phone_number: "312-584-3670",
+        website: "https://www.mccbchicago.com/",
+        image_url: "https://s3-media0.fl.yelpcdn.com/bphoto/MCsJUE8NVNqP5Q_mc2FaNw/348s.jpg",
+        cuisine_id: 3,
+        menu_items: [
+          {
+            name: "Pig Oil Green Onion Cold Noodle",
+            description: "Pig Oil Green Onion Cold Noodle",
+            image_url: "https://omnivorescookbook.com/wp-content/uploads/2017/01/1701_Shanghai-Scallion-Oil-Noodle_006.jpg",
+            restaurant_id: 8
+          },
+          {
+            name: "Szechuan Dan Dan Noodle",
+            description: "Hot and spicy.",
+            image_url: "https://images.food52.com/CCD25ii3KDFMVziYRvmD4_DRQB8=/1200x675/b06bbbdf-8503-4d78-8aab-2b435c8605a9--2013-0924_CP-sichuan-dan-dan-noodle-008.jpg",
+            restaurant_id: 8
+          }, 
+          {
+            name: "Sand Ginger Fly Chicken",
+            description: "Sand Ginger Fly Chicken (bone-in)",
+            image_url: "https://s23991.pcdn.co/wp-content/uploads/2020/04/vietnamese-caramel-chicken-fp.jpg",
+            restaurant_id: 8
+          },
+          {
+            name: "Szechuan Numb Spicy Mussels",
+            description: "Szechuan Numb Spicy Mussels",
+            image_url: "https://d22ir9aoo7cbf6.cloudfront.net/wp-content/uploads/sites/2/2018/07/szechuan-qi-house-of-sichuan.jpg",
+            restaurant_id: 8
+          }, 
+          {
+            name: "Baby Taro with Chicken",
+            description: "Hot and spicy (bone-in).",
+            image_url: "https://4.bp.blogspot.com/-GSbTEfNSuxg/TZ5CMnT5r5I/AAAAAAAAAhI/0ck7mmlcJRk/s1600/IMG_0724.JPG",
+            restaurant_id: 8
+          }, 
+          {
+            name: "Peach Crispy Shrimp",
+            description: "Peach Crispy Shrimp",
+            image_url: "https://4.bp.blogspot.com/-1NHEGGwmE5E/TlnB5Yl1xcI/AAAAAAAAAIw/srbd44EKYck/s1600/DSCN0198-2.jpg",
+            restaurant_id: 8
+          }
+        ]
+      }, 
+      {
+        name: "Peking Chinese Food",
+        address: "129 W North Ave",
+        phone_number: "312-584-3413",
+        website: "http://go2pekingchinesefood.com/",
+        image_url: "https://i1.ypcdn.com/blob/6a55f50d0699d9c3917b3f5e42c9400599d51b39_400x260_crop.jpg",
+        cuisine_id: 3,
+        menu_items: [
+          {
+            name: "Lo Mein",
+            description: "Pasta noodles with your choice of protein.",
+            image_url: "https://d1e3z2jco40k3v.cloudfront.net/-/media/mccormick-us/recipes/mccormick/b/800/beef-lo-mein.jpg?vd=20200628T063707Z&hash=9147AB1C8479EEBF359AC8D79E7D8272",
+            restaurant_id: 9
+          }, 
+          {
+            name: "House Special Chow Fun",
+            description: "Thick rice noodle with vegetable, chicken, beef and shrimp.",
+            image_url: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2018/9/9/0/DV2901_Beef-Chow-Fung_s4x3.jpg.rend.hgtvcom.826.620.suffix/1536507709354.jpeg",
+            restaurant_id: 9
+          },
+          {
+            name: "Singapore Mai Fun",
+            description: "Thin noodles stir fried with vegetable, chicken, beef, and shrimp in curry sauce. Hot and spicy.",
+            image_url: "https://www.chinasichuanfood.com/wp-content/uploads/2014/12/singapore-mei-fun-th1-1.jpg",
+            restaurant_id: 9
+          }, 
+          {
+            name: "Moo Shu",
+            description: "A delicious Chinese crepe stuffed with egg, vegetable, and five pancakes. Served with hoisin sauce.",
+            image_url: "https://www.readyseteat.ca/sites/g/files/qyyrlu541/files/uploadedImages/VH_Moo-Shu-Pork.jpg",
+            restaurant_id: 9
+          }, 
+          {
+            name: "House Special Chop Suey",
+            description: "Vegetable with chicken, beef and shrimp. Served with white rice.",
+            image_url: "https://cdn.shortpixel.ai/client/q_lossy,ret_img,w_1200/https://norecipes.com/wp-content/uploads/2017/04/chop-suey-010-1200x800.jpg",
+            restaurant_id: 9
+          },
+          {
+            name: "Yung Chow Fried Rice",
+            description: "Chicken, shrimp, pork, egg, green pea, onion, napa cabbage, and white rice.",
+            image_url: "https://www.rotinrice.com/wp-content/uploads/2016/01/YangChow-3.jpg",
+            restaurant_id: 9
+          }
+        ]
+      }
+    ]
+  }
+]
