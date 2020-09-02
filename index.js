@@ -28,9 +28,13 @@ app.get('/restaurants', db.getRestaurants)
 app.get('/restaurants/:id', db.getRestaurantById)
 app.post('/restaurants', db.createRestaurant)
 app.put('/restaurants/:id', updateRestaurant)
-app.delete('/users/:id', db.deleteUser)
+app.delete('/restaurants/:id', db.deleteRestaurant)
 
-
+app.get('/menu_items', db.getMenuItems)
+app.get('/menu_items/:id', db.getMenuItemById)
+app.post('/menu_items', db.createMenuItem)
+app.put('/menu_items/:id', updateMenuItem)
+app.delete('/menu_items/:id', db.deleteMenuItem)
 
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
