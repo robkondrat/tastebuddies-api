@@ -28,23 +28,23 @@ const getUserById = (request, response) => {
 }
 
 const createUser = (request, response) => {
-  const { name, email } = request.body
+  const { username, email, password_digest } = request.body
 
-  pool.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (error, results) => {
+  pool.query('INSERT INTO users (username, email, password_digest) VALUES ($1, $2, $3)', [username, email, password_digest], (error, results) => {
     if (error) {
       throw error
     }
-    response.status(201).send(`User added with ID: ${result.insertId}`)
+    response.status(201).send(`User added with ID: ${results.insertId}`)
   })
 }
 
 const updateUser = (request, response) => {
   const id = parseInt(request.params.id)
-  const { name, email } = request.body
+  const { username, email } = request.body
 
   pool.query(
-    'UPDATE users SET name = $1, email = $2 WHERE id = $3',
-    [name, email, id],
+    'UPDATE users SET username = $1, email = $2 WHERE id = $3',
+    [username, email, id],
     (error, results) => {
       if (error) {
         throw error
@@ -211,12 +211,12 @@ module.exports = {
   deleteUser,
   getCuisines,
   getCuisineById,
-  getRestaurant,
+  getRestaurants,
   getRestaurantById,
   createRestaurant,
   updateRestaurant,
   deleteRestaurant,
-  getMenuItem,
+  getMenuItems,
   getMenuItemById,
   createMenuItem,
   updateMenuItem,

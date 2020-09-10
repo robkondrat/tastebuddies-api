@@ -103,7 +103,7 @@
         cuisine_id: 1,
         menu_items: [
           {
-            name: "BBQ Brisket Nachos",
+            name: "Giddy-Up Fries",
             description: "Giddy-Up Fries",
             image_url: "https://media-cdn.tripadvisor.com/media/photo-s/0c/95/c1/64/giddy-up-fries.jpg",
             restaurant_id: 3
