@@ -7,6 +7,9 @@ const db = require('./queries')
 const accessTokenSecret = 'youraccesstokensecret';
 const bcrypt = require("bcryptjs")
 
+var cors = require('cors')
+app.use(cors())
+
 app.use(bodyParser.json())
 app.use(
   bodyParser.urlencoded({
