@@ -106,11 +106,33 @@ const getCuisineById = (request, response) => {
 }
 
 const getRestaurants = (request, response) => {
+
   pool.query('SELECT * FROM restaurants ORDER BY id ASC', (error, results) => {
     if (error) {
       throw error
     }
-    response.status(200).json(results.rows)
+    response.status(200).json(results.rows);
+
+
+  // pool.query('SELECT * FROM restaurants INNER JOIN menu_items ON restaurants.id = menu_items.restaurant_id', (error, results) => {
+  //   if (error) {
+  //     throw error
+  //   }
+  //   const restaurants = results.rows.reduce((acc, cur) => {
+  //     const index = acc.findIndex(restaurant => restaurant.restaurant_id === cur.restaurant_id)
+  //     if(index > -1) {
+  //       acc[index].menu_items.push(cur);
+  //     } else {
+  //       const restaurant = {
+  //         ...cur,
+  //         menu_items: []
+  //       };
+  //       restaurant.menu_items.push(cur);
+  //       acc.push(restaurant)
+  //     }
+  //     return acc;
+  //   }, [])
+  //   response.status(200).json(restaurants);
   })
 }
 
@@ -128,11 +150,11 @@ const getRestaurantById = (request, response) => {
 const createRestaurant = (request, response) => {
   const { name, address, phone_number, website, image_url, cuisine_id } = request.body
 
-  pool.query('INSERT INTO restaurants (name, address, phone_number, website, image_url, cuisine_id) VALUES ($1, $2, $3, $4, $5, $6)', [name, address, phone_number, website, image_url, cuisine_id], (error, results) => {
+  pool.query('INSERT INTO restaurants (name, address, phone_number, website, image_url, cuisine_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id', [name, address, phone_number, website, image_url, cuisine_id], (error, results) => {
     if (error) {
       throw error
     }
-    response.status(201).send(`Restaurant added with ID: ${result.insertId}`)
+    response.status(201).send(`Restaurant added with ID: ${results.rows[0].id}`)
   })
 }
 
