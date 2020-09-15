@@ -17,56 +17,38 @@ app.use(
   })
 )
 
-
 app.get('/', (request, response) => {
   response.json({ info: 'Node.js, Express, and Postgres API' })
 })
 
-
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
   // Read username and password from request body
 
   const { username, password } = req.body;
+  try {
+    const user = await db.getUserByUsername(username)
 
-  const saltRounds = 10
-
-  bcrypt.genSalt(saltRounds, function (err, salt) {
-    if (err) {
-      throw err
+    if (user) {
+      const isMatch = bcrypt.compareSync(password, user.password_digest)
+      if (isMatch) {
+        // Generate an access token
+        const accessToken = jwt.sign({ username: user.username }, accessTokenSecret);
+        res.json({accessToken});
+        return
+      } else {
+        res.status(401).json("Password do not match")
+      }
     } else {
-      bcrypt.hash(password, salt, function(err, hash) {
-        if (err) {
-          throw err
-        } else {
-          console.log(hash)
-          bcrypt.compare(password, hash, function(err, isMatch) {
-            if (err) {
-              throw err
-            } else if (!isMatch) {
-              console.log("Password doesn't match!")
-            } else {
-              console.log("Password matches!")
-            }
-          })
-        }
-      })
+      res.status(422).json("User does not exist!")
     }
-  })
-
-  // Filter user from the users array by username and password
-  const user = users.find(u => { return u.username === username && u.password === password });
-
-  if (user) {
-      // Generate an access token
-      const accessToken = jwt.sign({ username: user.username }, accessTokenSecret);
-
-      res.json({
-          accessToken
-      });
-  } else {
-      res.send('Username or password incorrect');
+  }
+  catch(err) {
+    res.status(500).json(err)
+    return
   }
 });
+
+
 
 app.get('/users', db.getUsers)
 app.get('/users/:id', db.getUserById)

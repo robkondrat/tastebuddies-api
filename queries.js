@@ -6,6 +6,8 @@ const pool = new Pool({
   password: 'password',
   port: 5432,
 })
+const bcrypt = require("bcryptjs")
+
 
 const getUsers = (request, response) => {
   pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
@@ -27,14 +29,32 @@ const getUserById = (request, response) => {
   })
 }
 
+const getUserByUsername = (username) => {
+
+  console.log(username)
+  return pool.query(`SELECT * FROM users WHERE username = '${username}'`)
+    .then(results => {
+      return results.rows[0]
+    })
+    .catch(err => {
+      console.log(err)
+      throw err
+    })
+
+}
+
 const createUser = (request, response) => {
   const { username, email, password_digest } = request.body
+  const salt = bcrypt.genSaltSync(10)
 
-  pool.query('INSERT INTO users (username, email, password_digest) VALUES ($1, $2, $3)', [username, email, password_digest], (error, results) => {
+  const hash = bcrypt.hashSync(password_digest, salt)
+
+  pool.query('INSERT INTO users (username, email, password_digest) VALUES ($1, $2, $3) RETURNING id', [username, email, hash], (error, results) => {
     if (error) {
       throw error
     }
-    response.status(201).send(`User added with ID: ${results.insertId}`)
+    console.log(results)
+    response.status(201).send(`User added with ID: ${results.rows[0].id}`)
   })
 }
 
@@ -206,6 +226,7 @@ const deleteMenuItem = (request, response) => {
 module.exports = {
   getUsers,
   getUserById,
+  getUserByUsername,
   createUser,
   updateUser,
   deleteUser,
