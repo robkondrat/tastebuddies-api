@@ -1,13 +1,35 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken')
+const cors = require('cors')
 const app = express()
 const port = 3000
 const db = require('./queries')
 const accessTokenSecret = 'youraccesstokensecret';
 const bcrypt = require("bcryptjs")
 
-var cors = require('cors')
+const verifyToken = (request, response, next) => {
+  const authorizationHeader = request.headers["authorization"]
+  if (!authorizationHeader) {
+    response.status(401).json("unauthorized")
+    return 
+  }
+  authArray = authorizationHeader.split(" ")
+  let bearerToken = null
+  if (authArray.length > 1) {
+    bearerToken = authArray[1]
+  } else {
+    bearerToken = authArray[0]
+  }
+  const decoded = jwt.verify(bearerToken, accessTokenSecret)
+  if (decoded && decoded.username) {
+    request.username = decoded.username
+    next() 
+  } else {
+    response.status(401).json("unauthorized")
+  }
+}
+
 app.use(cors())
 
 app.use(bodyParser.json())
@@ -55,6 +77,10 @@ app.get('/users/:id', db.getUserById)
 app.post('/users', db.createUser)
 app.put('/users/:id', db.updateUser)
 app.delete('/users/:id', db.deleteUser)
+
+app.get('/test', verifyToken, (request, response) => {
+  response.json(request.username)
+})
 
 app.get('/cuisines', db.getCuisines)
 app.get('/cuisines/:id', db.getCuisineById)
