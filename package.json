@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "license": "ISC",
+  "scripts": {
+    "dev": "npx nodemon index.js"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
