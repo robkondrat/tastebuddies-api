@@ -85,13 +85,20 @@ const deleteUser = (request, response) => {
   })
 }
 
-const getCuisines = (request, response) => {
-  pool.query('SELECT * FROM cuisines ORDER BY id ASC', (error, results) => {
-    if (error) {
-      throw error
+const getCuisines = async (request, response) => {
+  const cuisineResponse = await pool.query('SELECT * FROM cuisines ORDER BY id ASC')
+  const cuisines = cuisineResponse.rows
+
+  for ( const cuisine of cuisines ) {
+    const restaurants = await pool.query(`SELECT * FROM restaurants WHERE restaurants.cuisine_id = ${cuisine.id}`)
+    cuisine.restaurants = restaurants.rows
+    for ( const restaurant of cuisine.restaurants ) {
+      const menu_items = await pool.query(`SELECT * FROM menu_items WHERE menu_items.restaurant_id = ${restaurant.id}`)
+      restaurant.menu_items = menu_items.rows
     }
-    response.status(200).json(results.rows)
-  })
+  }
+  console.log("anything")
+  response.status(200).json(cuisines)
 }
 
 const getCuisineById = (request, response) => {
@@ -139,11 +146,21 @@ const getRestaurants = (request, response) => {
 const getRestaurantById = (request, response) => {
   const id = parseInt(request.params.id)
 
-  pool.query('SELECT * FROM restaurants WHERE id = $1', [id], (error, results) => {
+  pool.query('SELECT * FROM restaurants WHERE id = $1', [id], (error, result1) => {
+    pool.query('SELECT * FROM menu_items WHERE restaurant_id = $1', [id], function (error, result2) {
+      var ret = {
+        restaurants: result1.rows,
+        menu_items: result2.rows,
+      };
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(ret);
+    })
     if (error) {
       throw error
     }
-    response.status(200).json(results.rows)
+    // response.status(200).json(results.rows)
   })
 }
 
@@ -198,11 +215,11 @@ const getMenuItemById = (request, response) => {
   const id = parseInt(request.params.id)
 
   pool.query('SELECT * FROM menu_items WHERE id = $1', [id], (error, results) => {
-    if (error) {
-      throw error
-    }
-    response.status(200).json(results.rows)
-  })
+  if (error) {
+    throw error
+  }
+  response.status(200).json(results.rows)
+})
 }
 
 const createMenuItem = (request, response) => {
