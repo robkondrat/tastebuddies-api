@@ -8,7 +8,6 @@ const pool = new Pool({
 })
 const bcrypt = require("bcryptjs")
 
-
 const getUsers = (request, response) => {
   pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
     if (error) {
@@ -30,8 +29,6 @@ const getUserById = (request, response) => {
 }
 
 const getUserByUsername = (username) => {
-
-  console.log(username)
   return pool.query(`SELECT * FROM users WHERE username = '${username}'`)
     .then(results => {
       return results.rows[0]
@@ -40,7 +37,6 @@ const getUserByUsername = (username) => {
       console.log(err)
       throw err
     })
-
 }
 
 const createUser = (request, response) => {
@@ -53,7 +49,6 @@ const createUser = (request, response) => {
     if (error) {
       throw error
     }
-    console.log(results)
     response.status(201).send(`User added with ID: ${results.rows[0].id}`)
   })
 }
@@ -97,7 +92,6 @@ const getCuisines = async (request, response) => {
       restaurant.menu_items = menu_items.rows
     }
   }
-  console.log("anything")
   response.status(200).json(cuisines)
 }
 
@@ -119,27 +113,6 @@ const getRestaurants = (request, response) => {
       throw error
     }
     response.status(200).json(results.rows);
-
-
-  // pool.query('SELECT * FROM restaurants INNER JOIN menu_items ON restaurants.id = menu_items.restaurant_id', (error, results) => {
-  //   if (error) {
-  //     throw error
-  //   }
-  //   const restaurants = results.rows.reduce((acc, cur) => {
-  //     const index = acc.findIndex(restaurant => restaurant.restaurant_id === cur.restaurant_id)
-  //     if(index > -1) {
-  //       acc[index].menu_items.push(cur);
-  //     } else {
-  //       const restaurant = {
-  //         ...cur,
-  //         menu_items: []
-  //       };
-  //       restaurant.menu_items.push(cur);
-  //       acc.push(restaurant)
-  //     }
-  //     return acc;
-  //   }, [])
-  //   response.status(200).json(restaurants);
   })
 }
 
