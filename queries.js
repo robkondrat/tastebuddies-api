@@ -1,10 +1,13 @@
+require('dotenv').config()
+
 const Pool = require('pg').Pool
+// const {pool} = require('./config')
 const pool = new Pool({
-  user: 'me',
-  host: 'localhost',
-  database: 'tastebuddies_api',
-  password: 'password',
-  port: 5432,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
 })
 const bcrypt = require("bcryptjs")
 
